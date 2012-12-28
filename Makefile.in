@@ -96,8 +96,8 @@ DEST_EMAN	= $(man1dir)/$(EMAN)
 #
 all: $(CTAGS_EXEC) $(READ_LIB)
 
-$(CTAGS_EXEC): $(OBJECTS)
-	$(CC) $(LDFLAGS) -o $@ $(OBJECTS) $(LIBS)
+$(CTAGS_EXEC): $(SOURCES)
+	$(CC) -I. -I$(srcdir) $(DEFS) $(LDFLAGS) -o $@ $(SOURCES)
 
 dctags$(EXEEXT): debug.c $(SOURCES) $(HEADERS)
 	$(CC) -I. -I$(srcdir) $(DEFS) -DDEBUG -g $(LDFLAGS) -o $@ debug.c $(SOURCES)
