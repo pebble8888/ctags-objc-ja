@@ -617,7 +617,7 @@ static void findVimTags (void)
 	const unsigned char *line;
 		/* TODO - change this into a structure */
 
-	line = '\0';
+	line = NULL;
 
 	parseVimFile (line);
 }
